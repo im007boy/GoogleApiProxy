@@ -15,7 +15,7 @@ $payload = fgets($fp);
 $param = json_decode($payload);
  
 //Start the Curl session
-$session = curl_init($url);
+$session = curl_init();
 // echo $param->{'absoluteURI'};
 // echo $param->{'message-body'};
 
@@ -41,7 +41,7 @@ curl_setopt($session, CURLOPT_HTTPHEADER, $headers);    //设置http头
 curl_setopt($session, CURLOPT_HEADER, 0);  
 curl_setopt($session, CURLOPT_ENCODING, "gzip" );         //设置为客户端支持gzip压缩
  
-curl_setopt($session, CURLOPT_FOLLOWLOCATION, true); 
+//curl_setopt($session, CURLOPT_FOLLOWLOCATION, true); 
 //curl_setopt($session, CURLOPT_TIMEOUT, 4); 
 curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
  
